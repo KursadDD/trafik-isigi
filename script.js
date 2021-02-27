@@ -3,7 +3,6 @@ var time = 16;
 
 buton.onclick = function () {
   var timerId = setInterval(basla, 1000);
-  console.log("kırmızı");
 
   function basla() {
     time--;
@@ -12,7 +11,6 @@ buton.onclick = function () {
       red.style.backgroundColor = "red";
       red.style.color = "white";
       red.innerHTML = `${time - 10}`;
-      console.log("kırmızı:", time);
     }
     if ((time < 10) & (time >= 5)) {
       red.innerHTML = "";
@@ -20,8 +18,6 @@ buton.onclick = function () {
       yellow.style.backgroundColor = "yellow";
       yellow.style.color = "blue";
       yellow.innerHTML = `${time - 5}`;
-
-      console.log("SARI:", time);
     }
     if (time < 5) {
       yellow.innerHTML = "";
@@ -29,12 +25,10 @@ buton.onclick = function () {
       green.style.backgroundColor = "green";
       green.style.color = "white";
       green.innerHTML = `${time}`;
-      console.log("yeşil:", time);
     }
     if (time <= 0) {
       green.innerHTML = "";
-    clearTimeout(timerId);
-      
+      clearTimeout(timerId);
     }
   }
 };
